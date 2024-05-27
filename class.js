@@ -272,10 +272,15 @@ class Game{
 
 let game = new Game();
 
+document.addEventListener( 'touchmove', noscroll, { passive: false } ); 
+function noscroll ( e ) {
+    e.preventDefault();
+  }
+
+document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
+
 
 canvas.addEventListener('touchmove',(event)=>{
-  event.preventDefault();
-	
   var eventType = event.type;
   var x = 0, y = 0;
   const offset = canvas.getBoundingClientRect();
