@@ -274,6 +274,8 @@ let game = new Game();
 
 
 canvas.addEventListener('touchmove',(event)=>{
+  event.preventDefault();
+	
   var eventType = event.type;
   var x = 0, y = 0;
   const offset = canvas.getBoundingClientRect();
