@@ -1812,8 +1812,8 @@ class BattleScene extends Scene{
       for (var j = 0; j < this.useableHeight; j++) {
         let _x = i;
         let _y = j;
-        let _w = (canvas.width - 4) / 7 *2/3;
-        let tile = new Rect(2 +_w /6  + _w*3/2 * _x, canvas.height - _w*3/2*5/6 - 2 - _w*3/2 * _y, _w, _w, false, "black");
+        let _w = (canvas.width - 4) / 7 *3/4;
+        let tile = new Rect(2 +_w /8  + _w*4/3 * _x, canvas.height - _w*4/3*7/8 - 2 - _w*4/3 * _y, _w, _w, false, "black");
         tile.zahyou = [i,j];
         tile.touchevent = () => {
           if(this.faze == 1){
@@ -2302,11 +2302,11 @@ class BattleScene extends Scene{
                 //lineをthis.timelyItemsに追加
                 let lineWidth = 15;
                 let start = this.lastZahyou;
-                let startX = 2 +_w /6  + _w*3/2 * start[0] +_w/2;
-                let startY = canvas.height - _w*3/2*5/6 - 2 - _w*3/2 * start[1] + _w/2 ;
+                let startX = 2 +_w /8  + _w*4/3 * start[0] +_w/2;
+                let startY = canvas.height - _w*4/3*7/8 - 2 - _w*4/3 * start[1] + _w/2 ;
                 let end = tile.zahyou;
-                let endX = 2 +_w /6  + _w*3/2 * end[0] +_w/2 ;
-                let endY = canvas.height - _w*3/2*5/6 - 2 - _w*3/2 * end[1] + _w/2 ;
+                let endX = 2 +_w /8  + _w*4/3 * end[0] +_w/2 ;
+                let endY = canvas.height - _w*4/3*7/8 - 2 - _w*4/3 * end[1] + _w/2 ;
                 let line = new Line(startX,startY,endX,endY,"white",lineWidth);
                 line.globalAlpha = 0.8;
                 this.lines.push(line);
