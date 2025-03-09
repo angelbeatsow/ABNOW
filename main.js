@@ -2930,11 +2930,12 @@ class BattleScene extends Scene{
             setTimeout(()=>{
               if (user.clearStage < this.stagenum +1){
                 user.clearStage = this.stagenum +1;
-                //次のplaceの最初に次のstageがあるならuser.clearPlaceを増やす
-                if(places.length > user.clearPlace +1){
-                  if(places[user.clearPlace +1].stage[0] == user.clearStage)user.clearPlace++;
-                }
               }
+              //次のplaceの最初に次のstageがあるならuser.clearPlaceを増やす
+              if(places.length > user.clearPlace +1){
+                if(places[user.clearPlace +1].stage[0] == user.clearStage)user.clearPlace++;
+              }
+              
               if(menuScene.menuNum != 7){
                 menuScene.senka = this.stageClear();
               }
