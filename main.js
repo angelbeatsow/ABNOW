@@ -2928,7 +2928,13 @@ class BattleScene extends Scene{
           //今が最後の階ならクリア
           if(this.kai == this.kaisou){
             setTimeout(()=>{
-              if (user.clearStage < this.stagenum +1) user.clearStage = this.stagenum +1;
+              if (user.clearStage < this.stagenum +1){
+                user.clearStage = this.stagenum +1;
+                //次のplaceの最初に次のstageがあるならuser.clearPlaceを増やす
+                if(places.length > user.clearPlace +1){
+                  if(places[user.clearPlace +1][0] == user.clearStage +1)user.clearPlace++;
+                }
+              }
               if(menuScene.menuNum != 7){
                 menuScene.senka = this.stageClear();
               }
