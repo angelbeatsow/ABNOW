@@ -308,7 +308,7 @@ class MenuScene extends Scene{
         _st.rect = [].concat(hani);
         _st.touchevent = () => {
           if (isClick(_st)) {
-            this.operationNum[1] = _st.num;
+            this.operationNum[1] = places[this.operationNum[0]].stage[_st.num];
             this.menuNum = 1.111;
           }
         }
@@ -2932,7 +2932,7 @@ class BattleScene extends Scene{
                 user.clearStage = this.stagenum +1;
                 //次のplaceの最初に次のstageがあるならuser.clearPlaceを増やす
                 if(places.length > user.clearPlace +1){
-                  if(places[user.clearPlace +1][0] == user.clearStage +1)user.clearPlace++;
+                  if(places[user.clearPlace +1].stage[0] == user.clearStage)user.clearPlace++;
                 }
               }
               if(menuScene.menuNum != 7){
