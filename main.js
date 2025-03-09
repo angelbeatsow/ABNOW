@@ -3256,6 +3256,7 @@ function mainLoop(){
 
 
 window.onload = ()=>{
+  viewportSet();
   
   dbpromise.then(()=>{
         //ログインボーナスのため、最後のログイン時から日付が変わってるかチェック
